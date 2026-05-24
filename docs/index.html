@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AutoMS: Multi-Agent Evolutionary Search for Cross-Physics Inverse Microstructure Design.">
+  <meta name="keywords" content="AutoMS, Microstructure, Cross-physics Inverse Design, Multi-Agent, Evolutionary Search, SAES">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoMS: Multi-Agent Evolutionary Search for Cross-Physics Inverse Microstructure Design</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/fav.png">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AutoMS: Multi-Agent Evolutionary Search for Cross-Physics Inverse Microstructure Design</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Zhenyuan Zhao<sup>1†</sup>,</span>
+            <span class="author-block">Yu Xing<sup>1†</sup>,</span>
+            <span class="author-block">Tianyang Xue<sup>2</sup>,</span>
+            <span class="author-block">Lingxin Cao<sup>1</sup>,</span>
+            <span class="author-block">Xin Yan<sup>1</sup>,</span>
+            <span class="author-block">Lin Lu<sup>1*</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shandong University, Qingdao, China</span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong, Hong Kong, China</span>
+            <br>
+            <span class="author-block"><sup>†</sup>Equal Contribution</span>
+            <span class="author-block"><sup>*</sup>Corresponding Author</span>
+            <div class="is-size-4" style="margin-top:6px; font-weight:600;">ICML 2026 Submission</div>
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2603.27195"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2603.27195"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <!-- <span class="link-block">
+              <a href="https://github.com/your-org/AutoMS"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/AutoMS_teaser.png" alt="AutoMS teaser figure">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Designing microstructures with coupled cross-physics objectives is a fundamental challenge where traditional topology optimization is often computationally prohibitive and deep generative models frequently suffer from physical hallucinations. We introduce AutoMS, a multi-agent neuro-symbolic framework that reformulates inverse design as an LLM-driven evolutionary search.
+          </p>
+          <p>
+            AutoMS leverages LLMs as semantic navigators to decompose complex requirements and coordinate agent workflows, while a novel Simulation-Aware Evolutionary Search (SAES) mechanism handles low-level numerical optimization via local gradient approximation and directed parameter updates. This architecture achieves a state-of-the-art 83.8% success rate on 17 diverse cross-physics tasks, significantly outperforming both traditional evolutionary algorithms and existing agentic baselines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhao2026automs,
+  title={AutoMS: Multi-Agent Evolutionary Search for Cross-Physics Inverse Microstructure Design},
+  author={Zhao, Zhenyuan and Xing, Yu and Xue, Tianyang and Cao, Lingxin and Yan, Xin and Lu, Lin},
+  journal={arXiv preprint arXiv:2603.27195},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content has-text-centered">
+        Website template borrowed from
+        <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+        and adapted for AutoMS.
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

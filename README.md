@@ -19,7 +19,7 @@ Official code and instructions for the ICML 2026 paper:
 ## Teaser
 
 <p align="center">
-  <img src="automs.png" alt="AutoMS overview" width="800">
+  <img src="AutoMS.png" alt="AutoMS overview" width="800">
 </p>
 
 AutoMS converts a natural-language microstructure request into a closed-loop

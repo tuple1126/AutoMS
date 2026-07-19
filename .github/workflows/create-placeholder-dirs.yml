@@ -1,0 +1,48 @@
+name: Create placeholder directories
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create .gitkeep files
+        run: |
+          dirs=(
+            "data/cache"
+            "data/database/obj_files"
+            "data/db"
+            "data/generated/petl_results"
+            "data/graphrag_cache"
+            "data/obj"
+            "data/plasticity_examples"
+            "data/rag_doc"
+            "data/results"
+            "data/workshop"
+            "external/mind/nfd_vali/ckpts"
+            "external/triplane_inverse_design/ms/edm"
+          )
+
+          for d in "${dirs[@]}"; do
+            mkdir -p "$d"
+            touch "$d/.gitkeep"
+          done
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data external
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Add data and external placeholder directories"
+            git push
+          fi

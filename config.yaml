@@ -1,0 +1,86 @@
+# Copy .env.example to .env and provide the required values before running.
+# main.py resolves environment-variable placeholders when it loads this file.
+
+main_llm_config:
+  model: "${AUTOMS_MAIN_MODEL}"
+  api_key: "${OPENAI_API_KEY}"
+  api_base: "${OPENAI_BASE_URL}"
+  temperature: 0.1
+  max_tokens: 8000
+  function_call: "auto"
+
+agents:
+  requirement_parser:
+    name: "RequirementParser"
+    system_message_file: "prompts/requirement_parser.yaml"
+    enable_graphrag: true
+    rag_config:
+      chunk_token_size: 1000
+      max_results: 3
+      collection_name: "requirement_analysis"
+  structure_generator:
+    name: "StructureGenerator"
+    system_message_file: "prompts/structure_generator.yaml"
+  simulator:
+    name: "Simulator"
+    system_message_file: "prompts/simulator.yaml"
+  summary_reporter:
+    name: "SummaryReporter"
+    system_message_file: "prompts/summary_reporter.yaml"
+
+ablation_manager_prompt: "prompts/manager.yaml"
+
+tools:
+  database_path: "data/db"
+  cache_path: "data/cache"
+  rag_docs_path: "data/rag_doc"
+  graphrag_working_dir: "data/graphrag_cache"
+
+data:
+  csv_file: "data/database/converted_properties.csv"
+  obj_directory: "data/obj"
+  workshop_directory: "data/workshop"
+
+simulation:
+  max_iterations: 10
+  convergence_threshold: 0.1
+  parallel_limit: 3
+
+material_properties:
+  elastic_modulus:
+    min: 1.0
+    max: 50.0
+  plastic_deformation:
+    min: 0.05
+    max: 1.0
+  density:
+    min: 0.1
+    max: 2.0
+
+logging:
+  level: "INFO"
+  file: "logs/system.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# GraphRAG is optional at runtime. It reuses the configured OpenAI-compatible
+# endpoint and can be enabled when nano-graphrag and suitable embedding support
+# are installed.
+graphrag:
+  llm:
+    api_base: "${OPENAI_BASE_URL}"
+    api_key: "${OPENAI_API_KEY}"
+    model: "${AUTOMS_MAIN_MODEL}"
+    max_tokens: 6000
+    temperature: 0.0
+    type: "openai_chat"
+  embeddings:
+    api_base: "${OPENAI_BASE_URL}"
+    api_key: "${OPENAI_API_KEY}"
+    model: "${AUTOMS_EMBEDDING_MODEL}"
+    embedding_dim: 1536
+    type: "openai_embedding"
+  input:
+    base_dir: "data/rag_doc"
+    file_encoding: "utf-8"
+    file_type: "text"
+    type: "file"

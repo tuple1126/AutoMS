@@ -1,0 +1,17 @@
+# Core agent workflow
+PyYAML>=6.0
+python-dotenv>=1.0
+openai>=1.0
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+
+# Analysis tools imported by the workflow
+torch>=2.2
+open3d>=0.18
+linear-operator>=0.5
+tqdm>=4.66
+
+# Optional retrieval support used when available
+nest-asyncio>=1.6
+nano-graphrag>=0.0.8
